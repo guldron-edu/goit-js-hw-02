@@ -1,20 +1,26 @@
 const findLongestWord = function(string) {
   const array = string.split(' ');
-  let wordLength = 0;
-  let result;
+  let result = '';
 
-  for (const word of array) {
-    if (wordLength < word.length) {
-      wordLength = word.length;
-    }
-  }
-  for (const word of array) {
-    if (word.length === wordLength) {
-      result = word;
+  for (let i = 0; i < array.length; i += 1) {
+    if (result.length < array[i].length) {
+      result = array[i];
     }
   }
   return result;
 };
+//   for (const word of array) {
+//     if (wordLength < word.length) {
+//       wordLength = word.length;
+//     }
+//   }
+//   for (const word of array) {
+//     if (word.length === wordLength) {
+//       result = word;
+//     }
+//   }
+//   return result;
+// };
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
